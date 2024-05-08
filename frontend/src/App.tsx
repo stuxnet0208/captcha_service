@@ -60,7 +60,7 @@ const App: React.FC = () => {
 
   return (
     <div style={{ padding: 20 }}>
-      <Typography variant="h5" sx={{ display: 'flex', justifyContent: 'center', fontWeight: 600, mt: 2, mb: 5 }}>May 2024 CAPTCHA SERVICE</Typography>
+      <Typography variant="h5" sx={{ display: 'flex', justifyContent: 'center', textAlign:'center', fontWeight: 600, mt: 2, mb: 5 }}>May 2024 CAPTCHA SERVICE</Typography>
       <Box display="flex" alignItems="center" gap={2} sx={{ display: 'flex', justifyContent: 'center' }}>
         {captcha && <img src={captcha.image} alt="CAPTCHA" />}
         <IconButton onClick={fetchCaptcha} color="primary" aria-label="reload captcha">
