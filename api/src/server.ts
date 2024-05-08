@@ -38,7 +38,7 @@ app.get('/captcha', (req, res) => {
     const charWidth = 42; // Approximate width of each character
 
     text.split('').forEach(char => {
-        const angleDeg = Math.random() * 60 - 30; // Random angle between -30 and 30 degrees
+        const angleDeg = Math.random() * 90 - 45; // Random angle between -45 and 45 degrees
         const angleRad = angleDeg * Math.PI / 180;
         ctx.save();
         ctx.translate(x, y);
