@@ -20,7 +20,7 @@ Follow these steps to get the backend up and running:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/stuxnet0929/captcha_service.git
-   cd captcha_service
+   cd captcha_service/api
    ```
 
 2. **Install dependencies:**
