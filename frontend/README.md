@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# CAPTCHA Service Frontend for Test Task
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
