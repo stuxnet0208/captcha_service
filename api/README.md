@@ -32,35 +32,10 @@ Follow these steps to get the backend up and running:
 
 Launch the server by executing:
    ```bash
-   npm start
+   npm run build
+   npm run start
    ```
 This command starts the server on http://localhost:8080. If configured, the server will start on a different
-
-## API Endpoints
-
-1. **GET /captcha**
-   * Generates and returns a CAPTCHA image encoded in base64 format along with the text used in the CAPTCHA for validation purposes.
-   * Response:
-   ```bash
-      {
-         "image": "data:image/png;base64,iVBORw0KGgo...",
-         "text": "ABC123"
-      }
-   ```
-2. **POST /verify**
-   * Accepts user input for CAPTCHA verification.
-   * Request Body:
-   ```bash
-      {
-         "userInput": "ABC123",
-         "captchaText": "ABC123"
-      }
-   ```
-   * Response:
-   ```bash
-      {
-         "message": "You are a human" // or "You are a robot" if verification fails
-      }
 
 ## Author
 webapp.superdev@gmail.com

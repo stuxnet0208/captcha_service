@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const canvas_1 = require("canvas");
+const bcrypt_1 = __importDefault(require("bcrypt"));
 const app = (0, express_1.default)();
 const port = 8080;
 app.use((0, cors_1.default)());
@@ -45,17 +46,20 @@ app.get('/captcha', (req, res) => {
         x += charWidth; // Move to the next character position
     });
     const dataUrl = canvas.toDataURL();
-    res.send({ image: dataUrl, text: text });
+    const saltRounds = 10;
+    const salt = bcrypt_1.default.genSaltSync(saltRounds);
+    const hashText = bcrypt_1.default.hashSync(text, salt);
+    res.send({ image: dataUrl, text: hashText });
 });
 // Verify CAPTCHA
 app.post('/verify', express_1.default.json(), (req, res) => {
     const { userInput, captchaText } = req.body;
-    if (userInput === captchaText) {
-        res.send({ message: "You are a human" });
-    }
-    else {
-        res.send({ message: "You are a robot" });
-    }
+    bcrypt_1.default.compare(userInput, captchaText, async (err, result) => {
+        if (result)
+            res.send({ message: "You are a human" });
+        else
+            res.send({ message: "You are a robot" });
+    });
 });
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
