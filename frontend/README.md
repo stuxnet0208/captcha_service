@@ -2,28 +2,43 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before you can run this backend server, make sure you have the following installed:
+- Node.js (LTS version recommended, e.g., 16.x)
+- npm (usually comes with Node.js)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Follow these steps to get the backend up and running:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/stuxnet0929/captcha_service.git
+   cd captcha_service/frontend
+   ```
 
-### `npm run build`
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Available Scripts:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    In the project directory, you can run:
+    * `npm start`
+        Runs the app in the development mode.\
+        Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        The page will reload if you make edits.\
+        You will also see any lint errors in the console.
 
+    * `npm run build`
+        Builds the app for production to the `build` folder.\
+        It correctly bundles React in production mode and optimizes the build for the best performance.
+
+        The build is minified and the filenames include the hashes.\
+        Your app is ready to be deployed!
 
 ## Author
 webapp.superdev@gmail.com
