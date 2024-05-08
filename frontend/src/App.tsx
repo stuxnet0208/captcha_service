@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { TextField, Button, Typography, Box, IconButton, Grid } from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
-const API_URL = 'http://localhost:8080'
+const API_URL = process.env.REACT_APP_BASE_URL
 
 const App: React.FC = () => {
   const [captcha, setCaptcha] = useState<{ image: string; text: string } | null>(null);
