@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import cors from 'cors';
 import { createCanvas } from 'canvas';
 import bcrypt from "bcrypt";
@@ -19,7 +19,7 @@ const generateRandomText = (length: number): string => {
 }
 
 // Generate CAPTCHA
-app.get('/captcha', (req: Request, res: Response) => {
+app.get('/captcha', (req, res) => {
     const width = 250;
     const height = 60;
     const canvas = createCanvas(width, height);
@@ -57,7 +57,7 @@ app.get('/captcha', (req: Request, res: Response) => {
 });
 
 // Verify CAPTCHA
-app.post('/verify', express.json(), (req: Request, res: Response) => {
+app.post('/verify', express.json(), (req, res) => {
     const { userInput, captchaText } = req.body;
     bcrypt.compare(userInput, captchaText, async (err: Error | undefined, result: boolean) => {
         if (result) res.send({ message: "You are a human" });
