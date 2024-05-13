@@ -28,7 +28,7 @@ app.get('/captcha', (req, res) => {
     const text = generateRandomText(6);
     ctx.fillStyle = '#f4f4f4';
     ctx.fillRect(0, 0, width, height);
-    ctx.font = '36px Arial';
+    ctx.font = '36px Times';
     ctx.fillStyle = '#111';
 
     // Draw each character with a random rotation
